@@ -7,14 +7,14 @@ let matrix = [["#", "S", "#", "E", ".", "#", "#"],
               ["#", ".", ".", ".", ",", "#", "#"],
               ["#", "#", ".", "#", "#", "#", "#"]];
 
-let startPoint = createBoolMatrix(lines, columns, 'S', '#');
-let endPoint = createBoolMatrix(lines, columns, 'E', '.');
+let startPoint = readPoint(lines, columns, 'S', '#');
+let endPoint = readPoint(lines, columns, 'E', '.');
 
 let queue = [];
 
 alert(searchWay(lines-1, columns-1, startPoint, endPoint) ? "Yes" : "No");
 
-function createBoolMatrix(lines, columns, ind, symbol) {
+function readPoint(lines, columns, ind, symbol) {
 
     for(let i = 0; i < lines; i++) {
         for(let j = 0; j < columns; j++) {
