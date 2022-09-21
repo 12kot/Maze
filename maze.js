@@ -19,26 +19,24 @@ function createBoolMatrix(lines, columns, ind, symbol) {
     for(let i = 0; i < lines; i++) {
         for(let j = 0; j < columns; j++) {
 
-            if(matrix[i][j] != ind) continue; 
+            if(matrix[i][j] !== ind) continue;
 
             matrix[i][j] = symbol;
             return [i, j];
         
         }
     }
-
-    return;
 }
 
 function searchWay(lines, columns, start, end) {
     queue.push(start);
 
-    while(queue.length != 0) {
+    while(queue.length !== 0) {
         let point = queue.shift();
         let i = point[0];
         let j = point[1];
 
-        if(i == end[0] && j == end[1]) return true;
+        if(i === end[0] && j === end[1]) return true;
         
         if(checkBorder(0, i-1, i-1, j)) { //граница низ
             setValues(i - 1, j);
@@ -62,7 +60,7 @@ function searchWay(lines, columns, start, end) {
 
 function checkBorder(index, number, i, j) {
     if(index <= number) 
-        if(matrix[i][j] == '.') return true;
+        if(matrix[i][j] === '.') return true;
 
     return false;
 }
