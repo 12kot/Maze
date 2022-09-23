@@ -38,19 +38,19 @@ function searchWay(lines, columns, start, end) {
 
         if(i === end[0] && j === end[1]) return true;
         
-        if(checkBorder(0, i-1, i-1, j)) { //граница низ
+        if(checkPoint(0, i-1, i-1, j)) { //поинт низ
             setValues(i - 1, j);
         }
 
-        if(checkBorder(+i + 1, lines, +i + 1, j)) { //граница верх
+        if(checkPoint(+i + 1, lines, +i + 1, j)) { //поинт верх
             setValues(+i + 1, j);
         }
 
-        if(checkBorder(0, j - 1, i, j - 1)) { //граница лево
+        if(checkPoint(0, j - 1, i, j - 1)) { //поинт лево
             setValues(i, j - 1);
         }
 
-        if(checkBorder(+j + 1, columns, i, +j + 1)) { //граница право
+        if(checkPoint(+j + 1, columns, i, +j + 1)) { //поинт право
             setValues(i, +j + 1);
         }
     }
@@ -58,7 +58,7 @@ function searchWay(lines, columns, start, end) {
     return false;
 }
 
-function checkBorder(index, number, i, j) {
+function checkPoint(index, number, i, j) {
     if(index <= number) 
         if(matrix[i][j] === '.') return true;
 
