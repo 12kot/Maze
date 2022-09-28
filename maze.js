@@ -98,6 +98,5 @@ function outWay(matrix, endPoint) {
             j--;  continue;
         }
     }
-
     return way.reverse();
 }
